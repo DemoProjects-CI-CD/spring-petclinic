@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'MVN' }
-    triggers { pollSCM('H/* * * * *') }
+    triggers { pollSCM('* * * * *') }
     stages {
         stage ('VCS') {
             steps {
