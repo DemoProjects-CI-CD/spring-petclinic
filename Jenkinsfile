@@ -1,11 +1,11 @@
 pipeline {
     agent { label 'MVN' }
-    triggers { pollSCM('* * * * *') }
+    triggers { pollSCM('H/* * * * *') }
     stages {
         stage ('VCS') {
             steps {
                 git url: 'https://github.com/DemoProjects-CI-CD/spring-petclinic.git',
-                    branch: 'main'
+                    branch: 'declarative'
             } 
         }
         stage ('build') {
